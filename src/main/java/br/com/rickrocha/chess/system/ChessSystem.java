@@ -4,6 +4,8 @@
 
 package br.com.rickrocha.chess.system;
 
+import br.com.rickrocha.chess.system.boardgame.Position;
+
 /**
  *
  * @author rickelme
@@ -11,6 +13,7 @@ package br.com.rickrocha.chess.system;
 public class ChessSystem {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Position pos = new Position(0, 0);
+        System.out.println(pos);
     }
 }
