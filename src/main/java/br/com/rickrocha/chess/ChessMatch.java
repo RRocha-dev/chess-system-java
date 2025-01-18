@@ -4,7 +4,10 @@
  */
 package br.com.rickrocha.chess;
 
+import br.com.rickrocha.chess.pieces.King;
+import br.com.rickrocha.chess.pieces.Rook;
 import br.com.rickrocha.chess.system.boardgame.Board;
+import br.com.rickrocha.chess.system.boardgame.Position;
 
 /**
  *
@@ -16,7 +19,7 @@ public class ChessMatch {
 
     public ChessMatch() {
         board = new Board(8, 8);
-
+        initialSetup();
     }
 
     public ChessPiece[][] getPieces() {
@@ -27,5 +30,19 @@ public class ChessMatch {
             }
         }
         return mat;
+    }
+
+    private void initialSetup() {
+        placeWhitePieces();
+        placeBlackPieces();
+    }
+
+    private void placeWhitePieces() {
+        board.placePiece(new Rook(Color.WHITE, board), new Position(2, 1));
+        board.placePiece(new King(Color.WHITE, board), new Position(7, 4));
+    }
+
+    private void placeBlackPieces() {
+        board.placePiece(new King(Color.BLACK, board), new Position(0, 4));
     }
 }
