@@ -3,6 +3,7 @@
  */
 package br.com.rickrocha.chess.system;
 
+import br.com.rickrocha.chess.ChessMatch;
 import br.com.rickrocha.chess.system.boardgame.Board;
 import br.com.rickrocha.chess.system.boardgame.Position;
 
@@ -13,8 +14,10 @@ import br.com.rickrocha.chess.system.boardgame.Position;
 public class ChessSystem {
 
     public static void main(String[] args) {
-        Board board = new Board(8, 8);
         
+        ChessMatch chessMatch = new ChessMatch();
         
+        UI.printBoard(chessMatch.getPieces());
+
     }
 }
